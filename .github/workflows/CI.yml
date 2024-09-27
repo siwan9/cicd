@@ -40,6 +40,12 @@ jobs:
     - name: Build with Gradle Wrapper
       run: ./gradlew clean build
 
+    - name: Download Build Artifacts
+      uses: actions/download-artifact@v3
+      with:
+        name: build-lib
+        path: build/libs
+
     - name: Upload Build Artifacts
       uses: actions/upload-artifact@v3
       with:
