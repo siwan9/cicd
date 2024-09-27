@@ -43,7 +43,7 @@ jobs:
     - name: Upload Build Artifacts
       uses: actions/upload-artifact@v3
       with:
-        name: build-libs
+        name: build-lib
         path: build/libs/*.jar
 
   deploy:
@@ -74,7 +74,7 @@ jobs:
       - name: Download Build Artifacts
         uses: actions/download-artifact@v3
         with:
-          name: build-libs
+          name: build-lib
           path: build/libs
 
       - name: Build, tag, and push image to Amazon ECR
