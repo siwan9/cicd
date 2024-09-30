@@ -40,16 +40,10 @@ jobs:
     - name: Build with Gradle Wrapper
       run: ./gradlew clean build
 
-    - name: Download Build Artifacts
-      uses: actions/download-artifact@v3
-      with:
-        name: build-lib
-        path: build/libs
-
     - name: Upload Build Artifacts
       uses: actions/upload-artifact@v3
       with:
-        name: build-lib
+        name: build-libs
         path: build/libs/*.jar
 
   deploy:
@@ -80,7 +74,7 @@ jobs:
       - name: Download Build Artifacts
         uses: actions/download-artifact@v3
         with:
-          name: build-lib
+          name: build-libs
           path: build/libs
 
       - name: Build, tag, and push image to Amazon ECR
