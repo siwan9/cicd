@@ -9,7 +9,7 @@ class FlywayMigrationTest {
 
     @Test
     void testMigration() {
-        MySQLContainer<?> mysqlContainer = new MySQLContainer<>(DockerImageName.parse("mysql:8.0.36"))
+        MySQLContainer<?> mysqlContainer = new MySQLContainer<>(DockerImageName.parse("mysql:8.4"))
                 .withUsername("test")
                 .withPassword("test")
                 .withDatabaseName("testdb");
